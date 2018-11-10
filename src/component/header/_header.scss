@@ -1,0 +1,13 @@
+@import"../../asset//stylesheet/var";
+
+.header{
+    
+    .logo{
+        width: 200px;
+
+        img{
+            margin-left: -7px;
+            @include print-styles($image-set);
+        }
+    }
+}

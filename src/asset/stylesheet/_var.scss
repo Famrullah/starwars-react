@@ -1,0 +1,35 @@
+*{margin: 0;padding: 0;}
+
+// font
+$primary-text: (
+  color: #666666,
+  font-size: 14px,
+);
+
+// image
+$image-set:(
+  width:100%,
+  heigt:auto,
+);
+
+// position
+.text-center{
+  text-align: center;
+}
+
+.container{
+  padding: 20px;
+}
+
+.grid-3{
+  display:grid;
+  grid-gap: 20px;
+  grid-template-columns:1fr 1fr 1fr;
+}
+
+// mixin 
+@mixin print-styles($map){
+  @each $property, $value in $map {
+    #{$property}: $value;
+  }
+}
