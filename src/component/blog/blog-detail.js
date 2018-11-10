@@ -12,6 +12,14 @@ class blogdetail extends Component {
     }
 
     componentDidMount(){
+        this.fetchData()
+    }
+
+    componentWillUnmount(){
+        this.fetchData()
+    }
+
+    fetchData(){
         let id = this.props.match.params.id
         console.log(this.props)
         axios.get(`https://swapi.co/api/films/${id}`)
@@ -23,6 +31,7 @@ class blogdetail extends Component {
                 })
             })
     }
+
     render() {
         const {characters} = this.state.characters
         if(!characters) return null
