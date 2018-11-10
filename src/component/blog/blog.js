@@ -14,8 +14,11 @@ class blog extends Component {
     componentDidMount(){
         axios.get(`https://swapi.co/api/films/`)
         .then(response => {
+            const sort = response.data.results.sort(function(obj1, obj2) {
+                return obj1.episode_id - obj2.episode_id;
+            });
             this.setState({
-                posts:response.data.results,
+                posts:sort,
                 loading:false
             })
         })
@@ -23,6 +26,7 @@ class blog extends Component {
     }
 
     render() {
+        console.log(this.state.posts)
         if(this.state.loading){
            return(
                <div className="container">
@@ -31,19 +35,17 @@ class blog extends Component {
            )
         }else{
             let template = this.state.posts.map(item => item)
-            const sortEpisode = template.sort(function(obj1, obj2) {
-                return obj1.episode_id - obj2.episode_id;
-            });
             return (
                 <div className="container">
                     <div className="grid-3">
-                        {sortEpisode.map((item,index)=>{
+                        {template.map((item,index)=>{
                             return <List 
                             key={index}
                             title={item.title}
                             crawl={item.opening_crawl}
                             episode={item.episode_id}
                             character={item.characters}
+                            url={item.url}
                             />
                         })}
                     </div>

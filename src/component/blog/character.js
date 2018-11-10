@@ -14,6 +14,7 @@ export default class test extends Component {
 
     fetchData(){
         const data = this.props.data;
+        // console.log(data)
         Promise.all(data.map(url =>
             fetch(url).then(resp => resp.json())
         )).then(json => {
@@ -23,13 +24,14 @@ export default class test extends Component {
             })
         })
     }
+
     render() {
         if(this.state.loading){
             return(
                 <Loading/>
             )
         }else{
-            console.log(this.state.character)
+            // console.log(this.state.character)
             let test = this.state.character.map((item,index)=>{
                 return <div className="character__box" key={index}>
                             <p>Name : {item.name}</p>
@@ -43,6 +45,7 @@ export default class test extends Component {
                     <div className="character">
                         {test}
                     </div>
+
                 </div>
             );
         }

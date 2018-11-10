@@ -13,22 +13,22 @@ class blogdetail extends Component {
 
     componentDidMount(){
         let id = this.props.match.params.id
+        console.log(this.props)
         axios.get(`https://swapi.co/api/films/${id}`)
             .then(item => {
+                console.log(item)
                 this.setState({
                     posts:item.data.characters,
                     characters:item.data
                 })
             })
     }
-
-
     render() {
         const {characters} = this.state.characters
         if(!characters) return null
         const {title,episode_id,opening_crawl,director,producer} = this.state.characters
         
-        console.log(this.state.json)
+        console.log(this.state.characters)
         return (
             <div className="container">
                 <div className="starwars-film__detail">
