@@ -8,7 +8,8 @@ class blogdetail extends Component {
 
     state={
         posts:[],
-        characters:[]
+        characters:[],
+        loading:true
     }
 
     componentDidMount(){
@@ -16,7 +17,9 @@ class blogdetail extends Component {
     }
 
     componentWillUnmount(){
-        this.fetchData()
+        this.setState({
+            loading:false
+        })
     }
 
     fetchData(){

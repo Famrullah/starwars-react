@@ -12,6 +12,12 @@ export default class test extends Component {
        this.fetchData()
     }
 
+    componentWillUnmount(){
+        this.setState({
+            loading:false
+        })
+    }
+
     fetchData(){
         const data = this.props.data;
         // console.log(data)
@@ -45,7 +51,6 @@ export default class test extends Component {
                     <div className="character">
                         {test}
                     </div>
-
                 </div>
             );
         }

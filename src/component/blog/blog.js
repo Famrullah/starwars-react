@@ -34,20 +34,21 @@ class blog extends Component {
                </div>
            )
         }else{
-            let template = this.state.posts.map(item => item)
+            let data = this.state.posts.map(item => item)
+            let template = data.map((item,index)=>{
+                return <List 
+                key={index}
+                title={item.title}
+                crawl={item.opening_crawl}
+                episode={item.episode_id}
+                character={item.characters}
+                url={item.url}
+                />
+            })
             return (
                 <div className="container">
                     <div className="grid-3">
-                        {template.map((item,index)=>{
-                            return <List 
-                            key={index}
-                            title={item.title}
-                            crawl={item.opening_crawl}
-                            episode={item.episode_id}
-                            character={item.characters}
-                            url={item.url}
-                            />
-                        })}
+                        {template}
                     </div>
                 </div>
         );
