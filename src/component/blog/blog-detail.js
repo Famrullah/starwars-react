@@ -11,7 +11,7 @@ class blogdetail extends Component {
         characters:[]
     }
 
-    async componentDidMount(){
+    componentDidMount(){
         let id = this.props.match.params.id
         axios.get(`https://swapi.co/api/films/${id}`)
             .then(item => {
@@ -21,6 +21,8 @@ class blogdetail extends Component {
                 })
             })
     }
+
+
     render() {
         const {characters} = this.state.characters
         if(!characters) return null
