@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Blog from '../component/blog/blog'
-import BlogDetail from '../component/blog/blog-detail'
+import Blog from '../component/blog/film/film'
+import BlogDetail from '../component/blog/film/film-detail'
 import Layout from '../component/container/layout'
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
 import './App.scss';

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
-import List from './blog-list'
+import List from './film-list'
 import axios from 'axios'
-import Loading from '../hoc/withLoading'
-import './_blog-style.scss'
+import Loading from '../../hoc/withLoading'
+import './_film-style.scss'
 
 class blog extends Component {
     state={
@@ -26,7 +26,6 @@ class blog extends Component {
     }
 
     render() {
-        console.log(this.state.posts)
         if(this.state.loading){
            return(
                <div className="container">

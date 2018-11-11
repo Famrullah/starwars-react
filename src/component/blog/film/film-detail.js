@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
-import './_blog-style.scss'
+import './_film-style.scss'
 import axios from 'axios';
-import Character from './character'
+import Character from '../character/character'
 
 class blogdetail extends Component {
 
@@ -24,10 +24,8 @@ class blogdetail extends Component {
 
     fetchData(){
         let id = this.props.match.params.id
-        console.log(this.props)
         axios.get(`https://swapi.co/api/films/${id}`)
             .then(item => {
-                console.log(item)
                 this.setState({
                     posts:item.data.characters,
                     characters:item.data
@@ -39,8 +37,6 @@ class blogdetail extends Component {
         const {characters} = this.state.characters
         if(!characters) return null
         const {title,episode_id,opening_crawl,director,producer} = this.state.characters
-        
-        console.log(this.state.characters)
         return (
             <div className="container">
                 <div className="starwars-film__detail">

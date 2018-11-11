@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Loading from '../hoc/withLoading'
-import './_blog-style.scss'
+import Loading from '../../hoc/withLoading'
+import './_character-style.scss'
 
 export default class test extends Component {
     state={
@@ -8,7 +8,7 @@ export default class test extends Component {
         loading:true
     }
 
-    componentDidMount(){
+    async componentDidMount(){
        this.fetchData()
     }
 
@@ -38,8 +38,8 @@ export default class test extends Component {
             )
         }else{
             // console.log(this.state.character)
-            let test = this.state.character.map((item,index)=>{
-                return <div className="character__box" key={index}>
+            let character = this.state.character.map((item,index)=>{
+                return <div className="starwars-character__box" key={index}>
                             <p>Name : {item.name}</p>
                             <p>Height : {item.height}</p>
                             <p>Hair Color : {item.hair_color}</p>
@@ -48,8 +48,8 @@ export default class test extends Component {
             return (
                 <div className="wrapper">
                     <h1>Character</h1>
-                    <div className="character">
-                        {test}
+                    <div className="starwars-character">
+                        {character}
                     </div>
                 </div>
             );

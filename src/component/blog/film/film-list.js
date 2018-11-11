@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
-import './_blog-style.scss'
+import './_film-style.scss'
 
 const list = (props)=>{
     // console.log(props)
