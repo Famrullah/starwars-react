@@ -50,7 +50,7 @@ class blog extends Component {
                         {template}
                     </div>
                 </div>
-        );
+            );
         }
     }
 }

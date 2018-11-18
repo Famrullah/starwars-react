@@ -57,6 +57,7 @@
         // ******blog-detail component style****** //
         &__detail{
             @include print-styles($primary-text);
+            margin-bottom: 50px;
 
             &__main-content{
                 position: relative;
@@ -77,4 +78,5 @@
             }
         }
 }
+
 
